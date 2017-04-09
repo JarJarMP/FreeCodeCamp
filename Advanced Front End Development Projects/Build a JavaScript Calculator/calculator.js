@@ -101,3 +101,9 @@ Calculator.prototype.clearAll = function() {
 
   self.init();
 }
+
+Calculator.prototype.display = function() {
+  var self = this;
+
+  return self.stack.join(' ');
+};

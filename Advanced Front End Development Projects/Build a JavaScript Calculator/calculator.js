@@ -12,7 +12,7 @@ Calculator.prototype.init = function() {
   self.availableOperators = ['+', '-', '*', '/'];
   self.stack = []; // collecting all numbers and operators here
   self.lastStackItemType = ''; // number or operator
-};
+}
 
 Calculator.prototype.number = function(value) {
   var self = this;
@@ -32,7 +32,7 @@ Calculator.prototype.number = function(value) {
   // add new number to stack
   self.stack.push(valueToSave);
   self.lastStackItemType = 'number';
-};
+}
 
 Calculator.prototype.operation = function(operator) {
   var self = this;
@@ -46,7 +46,7 @@ Calculator.prototype.operation = function(operator) {
     self.stack.push(String(operator));
     self.lastStackItemType = 'operator';
   }
-};
+}
 
 Calculator.prototype.result = function() {
   var self = this;
@@ -62,7 +62,7 @@ Calculator.prototype.result = function() {
   result = parseFloat(result.toFixed(4));
 
   return result;
-};
+}
 
 Calculator.prototype.validateStack = function() {
   var self = this;
@@ -76,4 +76,4 @@ Calculator.prototype.validateStack = function() {
   if (self.availableOperators.indexOf(self.stack[0]) > -1) {
     self.stack.shift();
   }
-};
+}

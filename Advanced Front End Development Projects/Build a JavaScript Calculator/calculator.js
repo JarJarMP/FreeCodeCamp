@@ -48,6 +48,14 @@ Calculator.prototype.operation = function(operator) {
   }
 }
 
+Calculator.prototype.dot = function() {
+  var self = this;
+
+  if (self.lastStackItemType === 'number') {
+    self.stack.push(self.stack.pop() + '.');
+  }
+};
+
 Calculator.prototype.result = function() {
   var self = this;
 

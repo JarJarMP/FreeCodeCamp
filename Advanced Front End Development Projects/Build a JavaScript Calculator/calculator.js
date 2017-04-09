@@ -3,10 +3,16 @@ module.exports = Calculator;
 function Calculator() {
   var self = this;
 
+  self.init();
+}
+
+Calculator.prototype.init = function() {
+  var self = this;
+
   self.availableOperators = ['+', '-', '*', '/'];
   self.stack = []; // collecting all numbers and operators here
   self.lastStackItemType = ''; // number or operator
-}
+};
 
 Calculator.prototype.number = function(value) {
   var self = this;
@@ -45,10 +51,12 @@ Calculator.prototype.operation = function(operator) {
 Calculator.prototype.result = function() {
   var self = this;
 
-  self.validateStack()
-      
+  self.validateStack();
+
   var result = eval(self.stack.join(''));
-  self.stack = [];
+  
+  // clean up
+  self.init();
 
   // make it at most 4 digit decimal long number
   result = parseFloat(result.toFixed(4));

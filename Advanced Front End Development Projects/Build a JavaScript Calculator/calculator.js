@@ -54,6 +54,7 @@ Calculator.prototype.result = function() {
   self.validateStack();
 
   var result = eval(self.stack.join(''));
+      result = result === undefined ? 0 : result;
   
   // clean up
   self.init();
@@ -76,4 +77,19 @@ Calculator.prototype.validateStack = function() {
   if (self.availableOperators.indexOf(self.stack[0]) > -1) {
     self.stack.shift();
   }
+}
+
+Calculator.prototype.clearEntry = function() {
+  var self = this;
+
+  self.stack.pop();
+  self.lastStackItemType = (self.lastStackItemType === 'number') ? 
+                            'operator' : 
+                            'number';
+}
+
+Calculator.prototype.clearAll = function() {
+  var self = this;
+
+  self.init();
 }

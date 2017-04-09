@@ -50,6 +50,9 @@ Calculator.prototype.result = function() {
   var result = eval(self.stack.join(''));
   self.stack = [];
 
+  // make it at most 4 digit decimal long number
+  result = parseFloat(result.toFixed(4));
+
   return result;
 };
 

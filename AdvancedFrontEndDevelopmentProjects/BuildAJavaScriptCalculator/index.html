@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="calculator__display">
+        <div class="calculator__display-queue"></div>
+        <div class="calculator__display-result"></div>
+      </div>
+      <div class="calculator__controls">
+        <div class="calculator__control-row">
+          <button class="calculator__control-button calculator__control-button-AC">AC</button>
+          <button class="calculator__control-button calculator__control-button-CE">CE</button>
+          <button class="calculator__control-button calculator__control-button-modulo">%</button>
+          <button class="calculator__control-button calculator__control-button-divide">/</button>
+        </div>
+        <div class="calculator__control-row">
+          <button class="calculator__control-button calculator__control-button-7">7</button>
+          <button class="calculator__control-button calculator__control-button-8">8</button>
+          <button class="calculator__control-button calculator__control-button-9">9</button>
+          <button class="calculator__control-button calculator__control-button-multiply">*</button>
+        </div>
+        <div class="calculator__control-row">
+          <button class="calculator__control-button calculator__control-button-4">4</button>
+          <button class="calculator__control-button calculator__control-button-5">5</button>
+          <button class="calculator__control-button calculator__control-button-6">6</button>
+          <button class="calculator__control-button calculator__control-button-minus">-</button>
+        </div>
+        <div class="calculator__control-row">
+          <button class="calculator__control-button calculator__control-button-1">1</button>
+          <button class="calculator__control-button calculator__control-button-2">2</button>
+          <button class="calculator__control-button calculator__control-button-3">3</button>
+          <button class="calculator__control-button calculator__control-button-plus">+</button>
+        </div>
+        <div class="calculator__control-row">
+          <button class="calculator__control-button calculator__control-button-0">0</button>
+          <button class="calculator__control-button calculator__control-button-decimal">.</button>
+          <button class="calculator__control-button calculator__control-button-equal">=</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="calculator.js"></script>
+    <script>
+      const config = {
+        'display-queue': d3.select('.calculator__display-queue'),
+        'display-result': d3.select('.calculator__display-result'),
+        'button-0': d3.select('.calculator__control-button-0'),
+        'button-1': d3.select('.calculator__control-button-1'),
+        'button-2': d3.select('.calculator__control-button-2'),
+        'button-3': d3.select('.calculator__control-button-3'),
+        'button-4': d3.select('.calculator__control-button-4'),
+        'button-5': d3.select('.calculator__control-button-5'),
+        'button-6': d3.select('.calculator__control-button-6'),
+        'button-7': d3.select('.calculator__control-button-7'),
+        'button-8': d3.select('.calculator__control-button-8'),
+        'button-9': d3.select('.calculator__control-button-9'),
+        'button-AC': d3.select('.calculator__control-button-AC'),
+        'button-CE': d3.select('.calculator__control-button-CE'),
+        'button-decimal': d3.select('.calculator__control-button-decimal'),
+        'button-divide': d3.select('.calculator__control-button-divide'),
+        'button-equal': d3.select('.calculator__control-button-equal'),
+        'button-minus': d3.select('.calculator__control-button-minus'),
+        'button-modulo': d3.select('.calculator__control-button-modulo'),
+        'button-multiply': d3.select('.calculator__control-button-multiply'),
+        'button-plus': d3.select('.calculator__control-button-plus')
+      };
+
+      try {
+        new Calculator(config, d3);
+      } catch (e) {
+        console.error(e);
+      }
+    </script>
+  </body>
+</html>
